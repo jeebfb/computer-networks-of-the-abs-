@@ -1,0 +1,159 @@
+# COMPUTER NETWORKS LAB – EXPERIMENT 1
+
+## Experiment Title
+**Introduction to Packet Tracer, Peer-to-Peer Communication, Study of Cables and Their Colour Codes**
+
+## 1. Aim
+
+To become familiar with Cisco Packet Tracer, construct a simple network using two PCs and a switch, configure static IP addresses, verify connectivity using the ping command, and study Ethernet cables and their T-568A and T-568B colour codes.
+
+## 2. Software and Hardware Requirements
+
+- Cisco Packet Tracer network simulation software
+- Two PCs (PC0 and PC1)
+- One Cisco 2960-24TT switch (Switch0)
+- Copper Straight-Through Ethernet cables
+- Computer running Windows
+
+## 3. Brief Theory
+
+### Cisco Packet Tracer
+
+Cisco Packet Tracer is a network simulation tool used to design, configure, and test computer networks using virtual devices such as PCs, switches, and routers. It allows students to understand network communication without requiring physical networking equipment.
+
+### Peer-to-Peer Communication
+
+Peer-to-peer communication allows two computers to exchange information directly without requiring a dedicated server. In this experiment, PC0 and PC1 are connected through a network switch. Both computers belong to the same network, `192.168.1.0/24`, so they can communicate without a router.
+
+### Network Switch
+
+A switch is a networking device that operates primarily at Layer 2 of the OSI model. It forwards Ethernet frames to the appropriate connected device using MAC addresses. In this experiment, Switch0 connects PC0 and PC1.
+
+### IP Address
+
+An IP address uniquely identifies a device on an IP network. Each PC is assigned a different static IPv4 address within the same subnet.
+
+### Ping Command
+
+The `ping` command tests whether a destination device is reachable over an IP network. It uses ICMP Echo Request and Echo Reply messages to check connectivity and reports packet loss and response times.
+
+### Ethernet Cables and Colour Codes
+
+Ethernet cables commonly use twisted-pair wiring with eight conductors terminated in an RJ-45 connector. T-568A and T-568B are two standard arrangements for the wire colours. A straight-through cable uses the same wiring standard at both ends and is commonly used to connect a PC to a switch. A crossover cable uses different standards at the two ends.
+
+## 4. Network Topology
+
+The network contains two PCs connected to a Cisco 2960-24TT switch using Copper Straight-Through cables.
+
+**Topology:**
+
+`PC0 ↔ Switch0 ↔ PC1`
+
+- PC0 is assigned IP address `192.168.1.1`.
+- PC1 is assigned IP address `192.168.1.2`.
+- Both PCs use subnet mask `255.255.255.0`.
+- No router is required because both PCs belong to the same subnet.
+
+## 5. IP Address Configuration
+
+| Device | Interface | IPv4 Address | Subnet Mask | Default Gateway |
+|---|---|---|---|---|
+| PC0 | FastEthernet0 | 192.168.1.1 | 255.255.255.0 | 0.0.0.0 |
+| PC1 | FastEthernet0 | 192.168.1.2 | 255.255.255.0 | 0.0.0.0 |
+
+Both PCs are configured with static IP addresses. The default gateway is not required for communication between devices in the same subnet.
+
+## 6. Step-by-Step Procedure
+
+1. Open Cisco Packet Tracer and select the Logical workspace.
+2. Place two PC-PT devices and one Cisco 2960-24TT switch in the workspace.
+3. Name the computers PC0 and PC1 and the switch Switch0.
+4. Select Copper Straight-Through from the Connections palette.
+5. Connect PC0 FastEthernet0 to a FastEthernet port on Switch0.
+6. Connect PC1 FastEthernet0 to another FastEthernet port on Switch0.
+7. Wait until the link indicators turn green, showing that the links are active.
+8. Click PC0 and open **Desktop → IP Configuration**.
+9. Select Static and enter the IPv4 address `192.168.1.1` and subnet mask `255.255.255.0`.
+10. Click PC1 and open **Desktop → IP Configuration**.
+11. Select Static and enter the IPv4 address `192.168.1.2` and subnet mask `255.255.255.0`.
+12. Open PC0 and navigate to **Desktop → Command Prompt**.
+13. Execute the command `ping 192.168.1.2`.
+14. Observe the replies and packet statistics to verify communication between the two PCs.
+15. Study the T-568A and T-568B Ethernet cable colour arrangements.
+
+## 7. T-568A and T-568B Colour Codes
+
+| Pin | T-568A Colour | T-568B Colour |
+|---|---|---|
+| 1 | White/Green | White/Orange |
+| 2 | Green | Orange |
+| 3 | White/Orange | White/Green |
+| 4 | Blue | Blue |
+| 5 | White/Blue | White/Blue |
+| 6 | Orange | Green |
+| 7 | White/Brown | White/Brown |
+| 8 | Brown | Brown |
+
+A straight-through cable uses the same standard, either T-568A or T-568B, at both ends. A crossover cable uses T-568A at one end and T-568B at the other.
+
+## 8. Testing and Verification
+
+To verify communication, the following command was executed on PC0:
+
+```text
+ping 192.168.1.2
+```
+
+The observed output showed:
+
+- Packets sent: 4
+- Packets received: 4
+- Packets lost: 0
+- Packet loss: 0%
+
+The four successful replies indicate that PC0 can communicate with PC1 through Switch0.
+
+## 9. Observations
+
+1. Two PCs were connected through a Cisco 2960-24TT switch.
+2. Both PCs were configured with static IPv4 addresses in the same subnet.
+3. The Copper Straight-Through cable was used for both PC-to-switch connections.
+4. The link indicators turned green after the connections became active.
+5. The ping test returned four successful replies with zero packet loss.
+6. The T-568A and T-568B Ethernet wiring colour codes were studied.
+
+## 10. Result
+
+A simple computer network consisting of two PCs connected through a Cisco 2960-24TT switch was successfully configured in Cisco Packet Tracer. Static IP addresses were assigned to both PCs, and connectivity was verified using the ping command. The test returned four replies with zero packet loss. The T-568A and T-568B Ethernet cable colour codes were also studied.
+
+## 11. Conclusion
+
+This experiment provided practical knowledge of Cisco Packet Tracer and basic computer networking. Two PCs were connected through a switch, configured with static IP addresses, and tested using the ping command. Successful communication demonstrated that devices in the same subnet can exchange data through a switch without requiring a router. The experiment also introduced the Ethernet cable wiring standards T-568A and T-568B.
+
+## 12. Screenshots / Practical Evidence
+
+Insert your actual screenshots in the following order:
+
+1. Initial Packet Tracer workspace showing PC0, PC1, and Switch0.
+2. Network topology with both PCs connected to the switch.
+3. PC0 IP configuration showing `192.168.1.1`.
+4. PC1 IP configuration showing `192.168.1.2`.
+5. Command Prompt showing the successful ping test.
+
+## 13. GitHub Repository Structure
+
+Suggested repository name: `computer-networks-lab-1-packet-tracer`
+
+```text
+computer-networks-lab-1-packet-tracer/
+├── README.md
+├── screenshots/
+│   ├── initial-topology.png
+│   ├── connected-network.png
+│   ├── pc0-ip-configuration.png
+│   ├── pc1-ip-configuration.png
+│   └── ping-test.png
+└── lab1.pkt
+```
+
+Upload your actual Packet Tracer project as `lab1.pkt` and place the corresponding screenshots in the `screenshots` folder. The `README.md` file should contain the experiment title, aim, theory, configuration details, procedure, observations, result, and conclusion.
